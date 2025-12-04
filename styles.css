@@ -380,6 +380,91 @@ header h1 span {
 .phase.finals .day-label { color: var(--orange); }
 .phase.algo .day-label { color: var(--red); }
 
+/* TASK WITH DROPDOWN */
+.task-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.task-details {
+    border: 2px solid var(--gray);
+    background: var(--white);
+    margin-left: 41px;
+}
+
+.task-details summary {
+    padding: 8px 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    background: var(--gray);
+    color: var(--black);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.task-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.task-details summary::before {
+    content: '+';
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.task-details[open] summary::before {
+    content: '−';
+}
+
+.task-details[open] summary {
+    border-bottom: 2px solid var(--gray);
+}
+
+.task-details .breakdown {
+    padding: 12px;
+}
+
+.task-details .breakdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-details .breakdown-list li {
+    padding: 5px 0;
+    padding-left: 18px;
+    position: relative;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--black);
+    border-bottom: 1px dashed var(--gray);
+}
+
+.task-details .breakdown-list li:last-child {
+    border-bottom: none;
+}
+
+.task-details .breakdown-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gray);
+}
+
 /* TASK CHECKBOX */
 .task {
     display: flex;
