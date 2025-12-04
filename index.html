@@ -1,128 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXAM SPRINT</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAM SPRINT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header><div class="header-content"><h1>Exam Sprint<span>December 4 - 28, 2025</span></h1></div></header>
+    <header>
+        <div class="header-content">
+            <h1>Exam Sprint<span>December 4 - 28, 2025</span></h1>
+        </div>
+    </header>
 
-  <section class="dashboard"><div class="dashboard-inner">
-    <h2>Team Progress</h2>
-    <div class="add-user">
-      <input type="text" id="userName" placeholder="Enter name to join" maxlength="15">
-      <button onclick="addUser()">Join</button>
+    <section class="dashboard">
+        <div class="dashboard-inner">
+            <h2>Team Progress</h2>
+            <div class="add-user">
+                <input type="text" id="userName" placeholder="Enter name to join" maxlength="15">
+                <button onclick="addUser()">Join</button>
+            </div>
+            <div class="users-grid" id="usersGrid"></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background:var(--red)"></div>
+                <span class="legend-text">Algorithms</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:var(--orange)"></div>
+                <span class="legend-text">CS 305</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:var(--yellow)"></div>
+                <span class="legend-text">OOAD / Comp Org</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:var(--green)"></div>
+                <span class="legend-text">Math</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:var(--blue)"></div>
+                <span class="legend-text">Data Science</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:var(--purple)"></div>
+                <span class="legend-text">Python</span>
+            </div>
+        </div>
+
+        <!-- PHASE 1: KAUST PREP -->
+        <section class="phase kaust" data-phase="kaust">
+            <div class="phase-header">
+                <div class="phase-title">Phase 1: KAUST Prep</div>
+                <div class="phase-meta">
+                    <span class="phase-dates">Dec 4-12</span>
+                    <span class="phase-counter">0/18</span>
+                </div>
+            </div>
+            <div class="schedule">
+                <div class="schedule-row header">
+                    <div class="schedule-cell">Day</div>
+                    <div class="schedule-cell">Tasks</div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 4</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k1"><span class="task-box"></span><span class="task-text">Math for ML - Day 1</span><span class="task-tag tag-math">Math</span></label>
+                        <label class="task"><input type="checkbox" data-task="k2"><span class="task-box"></span><span class="task-text">10 Python MCQs</span><span class="task-tag tag-python">Py</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 5</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k3"><span class="task-box"></span><span class="task-text">Math for ML - Day 2</span><span class="task-tag tag-math">Math</span></label>
+                        <label class="task"><input type="checkbox" data-task="k4"><span class="task-box"></span><span class="task-text">10 Python MCQs</span><span class="task-tag tag-python">Py</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 6</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k5"><span class="task-box"></span><span class="task-text">Math for ML - Day 3</span><span class="task-tag tag-math">Math</span></label>
+                        <label class="task"><input type="checkbox" data-task="k6"><span class="task-box"></span><span class="task-text">10 Python MCQs</span><span class="task-tag tag-python">Py</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 7</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k7"><span class="task-box"></span><span class="task-text">Math for ML - Day 4</span><span class="task-tag tag-math">Math</span></label>
+                        <label class="task"><input type="checkbox" data-task="k8"><span class="task-box"></span><span class="task-text">15 Python MCQs</span><span class="task-tag tag-python">Py</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 8</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k9"><span class="task-box"></span><span class="task-text">Data Science - Day 1</span><span class="task-tag tag-ds">DS</span></label>
+                        <label class="task"><input type="checkbox" data-task="k10"><span class="task-box"></span><span class="task-text">15 Python MCQs</span><span class="task-tag tag-python">Py</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 9</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k11"><span class="task-box"></span><span class="task-text">Data Science - Day 2</span><span class="task-tag tag-ds">DS</span></label>
+                        <label class="task"><input type="checkbox" data-task="k12"><span class="task-box"></span><span class="task-text">20 Python MCQs</span><span class="task-tag tag-python">Py</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 10</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k13"><span class="task-box"></span><span class="task-text">Full mock test (timed)</span></label>
+                        <label class="task"><input type="checkbox" data-task="k14"><span class="task-box"></span><span class="task-text">Review mistakes</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 11</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k15"><span class="task-box"></span><span class="task-text">Weak spots attack</span></label>
+                        <label class="task"><input type="checkbox" data-task="k16"><span class="task-box"></span><span class="task-text">Light review</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 12</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="k17"><span class="task-box"></span><span class="task-text">Quick formula review</span></label>
+                        <label class="task"><input type="checkbox" data-task="k18"><span class="task-box"></span><span class="task-text">Rest and sleep early</span></label>
+                    </div>
+                </div>
+
+                <div class="exam-row">Dec 13 — KAUST Exam</div>
+            </div>
+        </section>
+
+        <!-- PHASE 2: FINALS -->
+        <section class="phase finals" data-phase="finals">
+            <div class="phase-header">
+                <div class="phase-title">Phase 2: Finals</div>
+                <div class="phase-meta">
+                    <span class="phase-dates">Dec 13-27</span>
+                    <span class="phase-counter">0/24</span>
+                </div>
+            </div>
+            <div class="schedule">
+                <div class="schedule-row header">
+                    <div class="schedule-cell">Day</div>
+                    <div class="schedule-cell">Tasks</div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 13 PM</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="f1"><span class="task-box"></span><span class="task-text">IT 415: Ch5 StateChart + Ch6 Activity Diagram</span><span class="task-tag tag-ooad">OOAD</span></label>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 14</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f2"><span class="task-box"></span><span class="task-text">IT 415 OOAD</span><span class="task-tag tag-ooad">OOAD</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Ch 7-9</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Ch7: Communication Diagram</li>
+                                        <li>Ch8: UML Tools</li>
+                                        <li>Ch9: Unified Process</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f3"><span class="task-box"></span><span class="task-text">CS 305 Programming Languages</span><span class="task-tag tag-cs305">CS305</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 1-9</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 1-2: Overview of Programming Languages</li>
+                                        <li>Lec 3-4: Describing PL Syntax</li>
+                                        <li>Lec 5-6: Syntax and Semantics</li>
+                                        <li>Lec 7: Language Systems</li>
+                                        <li>Lec 8-9: Types</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 15</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f4"><span class="task-box"></span><span class="task-text">IT 415 Review + Practice</span><span class="task-tag tag-ooad">OOAD</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Review</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Review all chapters (Ch5-9)</li>
+                                        <li>Practice drawing diagrams by hand</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f5"><span class="task-box"></span><span class="task-text">CS 305 Programming Languages</span><span class="task-tag tag-cs305">CS305</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 10-15</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 10: ML Introduction</li>
+                                        <li>Lec 11-12: Polymorphism</li>
+                                        <li>Lec 13: Scope</li>
+                                        <li>Lec 14-15: Memory Location</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 16</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f6"><span class="task-box"></span><span class="task-text">CS 305 Programming Languages</span><span class="task-tag tag-cs305">CS305</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 16-21</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 16: Parameters</li>
+                                        <li>Lec 17-18: Memory Management</li>
+                                        <li>Lec 19-21: Prolog</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f7"><span class="task-box"></span><span class="task-text">CS 305 Practice + Past Exams</span><span class="task-tag tag-cs305">CS305</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-row">Dec 17 — CS 305 Exam</div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 17 PM</span></div>
+                    <div class="schedule-cell tasks">
+                        <label class="task"><input type="checkbox" data-task="f8"><span class="task-box"></span><span class="task-text">IT 415: Final review + rest</span><span class="task-tag tag-ooad">OOAD</span></label>
+                    </div>
+                </div>
+
+                <div class="exam-row">Dec 18 — IT 415 OOAD Exam</div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 18 PM</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f9"><span class="task-box"></span><span class="task-text">CS 324 Advanced Math</span><span class="task-tag tag-math">Math</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 1-3</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 1: Introduction</li>
+                                        <li>Lec 2: Limits</li>
+                                        <li>Lec 3: Differentiation</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 19</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f10"><span class="task-box"></span><span class="task-text">CS 324 Advanced Math</span><span class="task-tag tag-math">Math</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 6, 8-9</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 6: Integration Applications</li>
+                                        <li>Lec 8: Vectors</li>
+                                        <li>Lec 9: Dot Product and Cross Product</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f11"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 7-8</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 7: Quick Sort</li>
+                                        <li>Lec 8: Heap Sort</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 20</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f12"><span class="task-box"></span><span class="task-text">CS 324 Advanced Math</span><span class="task-tag tag-math">Math</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 10-11</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 10: Functions of Several Variables</li>
+                                        <li>Lec 11: Matrices</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f13"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 10-11</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 10: BST and AVL Trees</li>
+                                        <li>Lec 11: String Matching</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 21</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f14"><span class="task-box"></span><span class="task-text">CS 324 Review + Practice</span><span class="task-tag tag-math">Math</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Review</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Full practice problems</li>
+                                        <li>Create formula sheet</li>
+                                        <li>Past exams</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-row">Dec 22 — CS 324 Math Exam</div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 22 PM</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f15"><span class="task-box"></span><span class="task-text">CS 312 Computer Organization</span><span class="task-tag tag-org">Org</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 7-8</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 7: Memory</li>
+                                        <li>Lec 8: Cache Memory 1</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 23</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f16"><span class="task-box"></span><span class="task-text">CS 312 Computer Organization</span><span class="task-tag tag-org">Org</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 9-10</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 9: Cache Memory 2</li>
+                                        <li>Lec 10: Virtual Memory</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f17"><span class="task-box"></span><span class="task-text">CS 312 Computer Organization</span><span class="task-tag tag-org">Org</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 11-12</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 11: Storage Systems</li>
+                                        <li>Lec 12: Performance Measures</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-row">Dec 24 — CS 312 Comp Org Exam</div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 24 PM</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f18"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 12</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 12: Greedy Algorithm</li>
+                                        <li>Activity Selection Problem</li>
+                                        <li>Huffman Coding</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 25</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f19"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 13</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 13: Dynamic Programming</li>
+                                        <li>Matrix Chain Multiplication</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f20"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 14</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 14: Graph Traversal</li>
+                                        <li>BFS (Breadth-First Search)</li>
+                                        <li>DFS (Depth-First Search)</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 26</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f21"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 15</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 15: Minimum Spanning Tree</li>
+                                        <li>Prim's Algorithm</li>
+                                        <li>Kruskal's Algorithm</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f22"><span class="task-box"></span><span class="task-text">CS 325 Algorithms</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 16</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 16: Shortest Path</li>
+                                        <li>Dijkstra's Algorithm</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-row">
+                    <div class="schedule-cell"><span class="day-label">Dec 27</span></div>
+                    <div class="schedule-cell tasks">
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f23"><span class="task-box"></span><span class="task-text">CS 325 Full Review + Past Exams</span><span class="task-tag tag-algo">Algo</span></label>
+                            </div>
+                            <details class="task-details">
+                                <summary>Lec 7-16 Review</summary>
+                                <div class="breakdown">
+                                    <ul class="breakdown-list">
+                                        <li>Lec 7: Quick Sort</li>
+                                        <li>Lec 8: Heap Sort</li>
+                                        <li>Lec 10: BST and AVL Trees</li>
+                                        <li>Lec 11: String Matching</li>
+                                        <li>Lec 12: Greedy Algorithm</li>
+                                        <li>Lec 13: Dynamic Programming</li>
+                                        <li>Lec 14: Graph Traversal</li>
+                                        <li>Lec 15: MST (Prim, Kruskal)</li>
+                                        <li>Lec 16: Shortest Path (Dijkstra)</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="task-wrapper">
+                            <div class="task-row">
+                                <label class="task"><input type="checkbox" data-task="f24"><span class="task-box"></span><span class="task-text">Rest and sleep early</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-row">Dec 28 — CS 325 Algorithms Exam</div>
+            </div>
+        </section>
+
+        <!-- TIPS -->
+        <div class="tips">
+            <div class="tip-card rituals">
+                <h3>Daily Non-Negotiables</h3>
+                <ul>
+                    <li>5 min movement before studying</li>
+                    <li>25/5 sprints, then 15 min break</li>
+                    <li>Phone in another room</li>
+                    <li>Change locations twice per day</li>
+                    <li>Stop by 11pm, sleep 7+ hours</li>
+                </ul>
+            </div>
+            <div class="tip-card stuck">
+                <h3>When You Are Stuck</h3>
+                <ul>
+                    <li>Set a 5 minute timer, just start</li>
+                    <li>Body double with lo-fi stream</li>
+                    <li>Pick the smallest task only</li>
+                    <li>Write down what is stressing you</li>
+                    <li>Switch subjects if bored</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>One Sprint at a Time</p>
+        </footer>
     </div>
-    <div class="users-grid" id="usersGrid"></div>
-  </div></section>
 
-  <div class="container">
-    <div class="legend">
-      <div class="legend-item"><div class="legend-color" style="background:var(--red)"></div><span class="legend-text">Hardest: Algorithms</span></div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--orange)"></div><span class="legend-text">Hard: Prog Lang</span></div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--yellow)"></div><span class="legend-text">Medium: OOAD / Comp Org</span></div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--green)"></div><span class="legend-text">Easier: Math</span></div>
-      <div class="legend-item"><div class="legend-color" style="background:var(--blue)"></div><span class="legend-text">KAUST Prep</span></div>
-    </div>
-
-    <section class="phase kaust" data-phase="kaust">
-      <div class="phase-header"><div class="phase-title">Phase 1: KAUST Prep</div><div class="phase-meta"><span class="phase-dates">Dec 4-12</span><span class="phase-counter">0/27</span></div></div>
-      <div class="schedule">
-        <div class="schedule-row header"><div class="schedule-cell">Day</div><div class="schedule-cell">Morning</div><div class="schedule-cell">Evening</div><div class="schedule-cell">Daily</div></div>
-
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 4</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k1"><span class="task-box"></span><span class="task-text">Math for ML - Day 1</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k2"><span class="task-box"></span><span class="task-text">Data Science - Day 1</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k3"><span class="task-box"></span><span class="task-text">10 Python MCQs</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 5</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k4"><span class="task-box"></span><span class="task-text">Math for ML - Day 2</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k5"><span class="task-box"></span><span class="task-text">Data Science - Day 2</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k6"><span class="task-box"></span><span class="task-text">10 Python MCQs</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 6</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k7"><span class="task-box"></span><span class="task-text">Math for ML - Day 3</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k8"><span class="task-box"></span><span class="task-text">Python weak spots</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k9"><span class="task-box"></span><span class="task-text">10 Python MCQs</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 7</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k10"><span class="task-box"></span><span class="task-text">Math for ML - Day 4</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k11"><span class="task-box"></span><span class="task-text">Python practice</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k12"><span class="task-box"></span><span class="task-text">15 Python MCQs</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 8</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k13"><span class="task-box"></span><span class="task-text">DS review + gaps</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k14"><span class="task-box"></span><span class="task-text">Python practice</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k15"><span class="task-box"></span><span class="task-text">15 Python MCQs</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 9</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k16"><span class="task-box"></span><span class="task-text">Full Python revision</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k17"><span class="task-box"></span><span class="task-text">Math review</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k18"><span class="task-box"></span><span class="task-text">20 Python MCQs</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 10</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k19"><span class="task-box"></span><span class="task-text">Mock test: All topics</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k20"><span class="task-box"></span><span class="task-text">Mock test: Timed</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k21"><span class="task-box"></span><span class="task-text">Review mistakes</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 11</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k22"><span class="task-box"></span><span class="task-text">Weak spot attack</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k23"><span class="task-box"></span><span class="task-text">Light review</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k24"><span class="task-box"></span><span class="task-text">Rest early</span></label></div></div>
-        <div class="schedule-row"><div class="schedule-cell"><span class="day-label">Dec 12</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k25"><span class="task-box"></span><span class="task-text">Light review only</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k26"><span class="task-box"></span><span class="task-text">REST</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="k27"><span class="task-box"></span><span class="task-text">Sleep well</span></label></div></div>
-
-        <div class="exam-row">Dec 13 — KAUST Exam</div>
-      </div>
-    </section>
-
-    <section class="phase cs305" data-phase="cs305">
-      <div class="phase-header"><div class="phase-title">Phase 2: CS 305 Programming Languages</div><div class="phase-meta"><span class="phase-dates">Dec 13-16</span><span class="phase-counter">0/5</span></div></div>
-      <div class="schedule">
-        <div class="schedule-row header three-col"><div class="schedule-cell">Day</div><div class="schedule-cell">Focus</div><div class="schedule-cell">Strategy</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 13 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="c1"><span class="task-box"></span><span class="task-text">Lec 1-5: Foundations</span></label></div><div class="schedule-cell">Post-exam, low pressure</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 14</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="c2"><span class="task-box"></span><span class="task-text">Lec 6-10: Syntax, Semantics, ML</span></label></div><div class="schedule-cell">Hardest day - 4 sprints</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 15</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="c3"><span class="task-box"></span><span class="task-text">Lec 11-16: Polymorphism, Scope</span></label></div><div class="schedule-cell">Make flashcards</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 16 AM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="c4"><span class="task-box"></span><span class="task-text">Lec 17-21: Memory Mgmt, Prolog</span></label></div><div class="schedule-cell">Finish content</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 16 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="c5"><span class="task-box"></span><span class="task-text">Practice + past exams</span></label></div><div class="schedule-cell">Timed practice</div></div>
-        <div class="exam-row">Dec 17 — CS 305 Exam</div>
-      </div>
-    </section>
-
-    <section class="phase ooad" data-phase="ooad">
-      <div class="phase-header"><div class="phase-title">Phase 3: IT 415 OOAD</div><div class="phase-meta"><span class="phase-dates">Dec 17-18</span><span class="phase-counter">0/4</span></div></div>
-      <div class="schedule">
-        <div class="schedule-row header three-col"><div class="schedule-cell">Time</div><div class="schedule-cell">Focus</div><div class="schedule-cell">Strategy</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 17 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="o1"><span class="task-box"></span><span class="task-text">Ch5 StateChart + Ch6 Activity</span></label></div><div class="schedule-cell">Draw diagrams by hand</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 17 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="o2"><span class="task-box"></span><span class="task-text">Ch7 Communication Diagram</span></label></div><div class="schedule-cell">Practice creating</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 18 AM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="o3"><span class="task-box"></span><span class="task-text">Ch8 UML Tools</span></label></div><div class="schedule-cell">Speedrun</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 18 AM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="o4"><span class="task-box"></span><span class="task-text">Ch9 Unified Process</span></label></div><div class="schedule-cell">Key phases only</div></div>
-        <div class="exam-row">Dec 18 — IT 415 Exam</div>
-      </div>
-    </section>
-
-    <section class="phase math" data-phase="math">
-      <div class="phase-header"><div class="phase-title">Phase 4: CS 324 Advanced Math</div><div class="phase-meta"><span class="phase-dates">Dec 18-21</span><span class="phase-counter">0/8</span></div></div>
-      <div class="schedule">
-        <div class="schedule-row header three-col"><div class="schedule-cell">Day</div><div class="schedule-cell">Math Topics</div><div class="schedule-cell">Parallel: Algorithms</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 18 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="m1"><span class="task-box"></span><span class="task-text">Limits + Differentiation</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="ma1"><span class="task-box"></span><span class="task-text">Quick Sort</span></label><span class="parallel-tag">ALGO</span></div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 19</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="m2"><span class="task-box"></span><span class="task-text">Integration + Vectors</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="ma2"><span class="task-box"></span><span class="task-text">Heap Sort + BST</span></label><span class="parallel-tag">ALGO</span></div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 20</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="m3"><span class="task-box"></span><span class="task-text">Functions + Matrices</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="ma3"><span class="task-box"></span><span class="task-text">Greedy + DP</span></label><span class="parallel-tag">ALGO</span></div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 21</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="m4"><span class="task-box"></span><span class="task-text">Full practice + formulas</span></label></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="ma4"><span class="task-box"></span><span class="task-text">Graphs intro</span></label><span class="parallel-tag">ALGO</span></div></div>
-        <div class="exam-row">Dec 22 — CS 324 Exam</div>
-      </div>
-    </section>
-
-    <section class="phase org" data-phase="org">
-      <div class="phase-header"><div class="phase-title">Phase 5: CS 312 Computer Organization</div><div class="phase-meta"><span class="phase-dates">Dec 22-23</span><span class="phase-counter">0/4</span></div></div>
-      <div class="schedule">
-        <div class="schedule-row header three-col"><div class="schedule-cell">Day</div><div class="schedule-cell">Topics</div><div class="schedule-cell">Key Focus</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 22 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="r1"><span class="task-box"></span><span class="task-text">Memory (Lec 7)</span></label></div><div class="schedule-cell">Understand hierarchy</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 22 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="r2"><span class="task-box"></span><span class="task-text">Cache Memory 1 + 2</span></label></div><div class="schedule-cell">Master calculations</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 23</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="r3"><span class="task-box"></span><span class="task-text">Virtual Memory + Storage</span></label></div><div class="schedule-cell">Page table calcs</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 23</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="r4"><span class="task-box"></span><span class="task-text">Performance Measures</span></label></div><div class="schedule-cell">Past exam practice</div></div>
-        <div class="exam-row">Dec 24 — CS 312 Exam</div>
-      </div>
-    </section>
-
-    <section class="phase algo" data-phase="algo">
-      <div class="phase-header"><div class="phase-title">Phase 6: CS 325 Algorithms — Hardest</div><div class="phase-meta"><span class="phase-dates">Dec 24-27</span><span class="phase-counter">0/8</span></div></div>
-      <div class="schedule">
-        <div class="schedule-row header three-col"><div class="schedule-cell">Day</div><div class="schedule-cell">Topics</div><div class="schedule-cell">Practice Focus</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 24 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a1"><span class="task-box"></span><span class="task-text">Quick Sort + Heap Sort</span></label></div><div class="schedule-cell">Trace examples</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 24 PM</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a2"><span class="task-box"></span><span class="task-text">BST + AVL Trees</span></label></div><div class="schedule-cell">Rotations practice</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 25</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a3"><span class="task-box"></span><span class="task-text">String Match + Greedy</span></label></div><div class="schedule-cell">Activity selection</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 25</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a4"><span class="task-box"></span><span class="task-text">DP: Matrix Chain</span></label></div><div class="schedule-cell">Solve recurrences</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 26</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a5"><span class="task-box"></span><span class="task-text">Graph Traversal BFS/DFS</span></label></div><div class="schedule-cell">By hand traces</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 26</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a6"><span class="task-box"></span><span class="task-text">MST: Prim + Kruskal</span></label></div><div class="schedule-cell">Step-by-step</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 26</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a7"><span class="task-box"></span><span class="task-text">Shortest Path: Dijkstra</span></label></div><div class="schedule-cell">Multiple graphs</div></div>
-        <div class="schedule-row three-col"><div class="schedule-cell"><span class="day-label">Dec 27</span></div><div class="schedule-cell"><label class="task"><input type="checkbox" data-task="a8"><span class="task-box"></span><span class="task-text">Full Review + Past Exams</span></label></div><div class="schedule-cell">Timed practice</div></div>
-        <div class="exam-row">Dec 28 — CS 325 Exam</div>
-      </div>
-    </section>
-
-    <div class="tips">
-      <div class="tip-card rituals"><h3>Daily Non-Negotiables</h3><ul><li>5 min movement before studying</li><li>25/5 sprints, then 15 min break</li><li>Phone in another room</li><li>Change locations twice per day</li><li>Stop by 11pm, sleep 7+ hours</li></ul></div>
-      <div class="tip-card stuck"><h3>When You Are Stuck</h3><ul><li>Set a 5 minute timer, just start</li><li>Body double with lo-fi stream</li><li>Pick the smallest task only</li><li>Write down what is stressing you</li><li>Switch subjects if bored</li></ul></div>
-    </div>
-
-    <footer><p>One Sprint at a Time</p></footer>
-  </div>
+    <script src="script.js"></script>
 </body>
 </html>
